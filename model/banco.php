@@ -48,6 +48,15 @@ class Banco{
         return $result->fetch_array(MYSQLI_ASSOC);
 
     }
+
+    public function listaDispositivos(){
+        $option = array();
+        $result = $this->mysqli->query("SELECT * FROM dispositivos");
+        while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
+            $option[] = '<option value='.$row['id'].'>'.$row['hostname'].'</option>';
+        }
+        return $option;
+    }
     
     public function updateDispositivos($hostname,$ip,$tipo,$fabricante,$id){
         $stmt = $this->mysqli->prepare("UPDATE `dispositivos` SET `hostname` = ?, `ip`=?, `tipo`=?, `fabricante`=? WHERE `id` = ?");
