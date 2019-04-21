@@ -44,7 +44,7 @@ class integracaoController {
             if(@!ssh2_auth_password($con, $usuario, $senha)) {
                 $resp = "Falha: falha na autenticação\n";
             } else {
-                $resp = "Sucesso...\n";
+                $resp = "Comando (".$comando.") Sucesso...\n";
 
                 if (!($stream = ssh2_exec($con, $comando ))) {
                     $resp = "falhar: falha ao executar o comando\n";

@@ -13,7 +13,7 @@
             <div class="form-group">
                 <input class="form-control" type="text" id="usuario" name="usuario" value="" 
                 placeholder="Nome do Usuário SSH" required autofocus>
-                <input class="form-control" type="text" id="senha" name="senha" value=""
+                <input class="form-control" type="password" id="senha" name="senha" value=""
                 placeholder="Senha SSH" required>
                 <select id="dispositivoId" name="dispositivoId" class="form-control">
                 <option value="">Selecione o dispositivo</option>
