@@ -24,6 +24,8 @@ Configuração usada no Servidor de Desenvolvimento (Ubuntu 18.04 LTS + Apache):
 
 Rode o script do Banco de dados no MySQL: `script.sql`
 
+Arquivo de conexão: `init.php`
+Configuração abaixo:
 ```ini
 //timezone
 
