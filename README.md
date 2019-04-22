@@ -6,6 +6,12 @@
 - Apache 
 - Banco de Dados MySQL 
 
+Ativar extensão no php `sudo nano /etc/php/7.2/apache2/php.ini` 
+- `extension=openssl` 
+- `extension=mcrypt.so`
+- `extension=php_ssh2`
+- `extension=mysqli`
+
 ### Instalação
 
 #### Configurações do Servidor Web
