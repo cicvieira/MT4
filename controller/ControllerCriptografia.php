@@ -109,7 +109,7 @@ class Criptografia
 
     public function compareHashes($txt_hash, $comp_txt_hash) {
 
-       $c0 = $c1 = $c2 = 'Erro';
+       $c0 = $c1 = $c2 = '';
 
        $sha512 = $this->HashSHA512($txt_hash);
        $HMAC = $this->HashHMAC($txt_hash);
