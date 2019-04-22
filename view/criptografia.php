@@ -6,6 +6,7 @@
     <?php include("menu.php") ?>
     <div class="container">
         <h3>Criptografia</h3><h5>1. Cifra de César</h5>
+        <div class="alert alert-danger hide"></div> 
     <div class="row">     
         <form method="post" action="criptografia.php" id="form1" name="form1" class="col-10">
                 <div class="form-row">

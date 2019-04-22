@@ -107,4 +107,61 @@ class Criptografia
     }
 
 
+    public function compareHashes($txt_hash, $comp_txt_hash) {
+
+       $c0 = $c1 = $c2 = 'Erro';
+
+       $sha512 = $this->HashSHA512($txt_hash);
+       $HMAC = $this->HashHMAC($txt_hash);
+       $Hmd5 = $this->HashMd5($txt_hash);
+
+       if($sha512 == $comp_txt_hash){
+          $c0 = 'OK';
+       }
+       if($HMAC == $comp_txt_hash){
+          $c1 = 'OK';
+       }
+       if($Hmd5 == $comp_txt_hash){
+          $c2 = 'OK';
+       }
+
+       $Uhash = $comp_txt_hash;
+
+       $a = array();
+       $a[0] = array('Thash' => 'SHA512', 'Hash' => $c0 ,'Chash' => $sha512 ,'Uhash' => $Uhash,);
+       $a[1] = array('Thash' => 'HMAC', 'Hash' => $c1 ,'Chash' => $HMAC , 'Uhash' => $Uhash);
+       $a[2] = array('Thash' => 'MD5', 'Hash' => $c2 ,'Chash' => $Hmd5 ,'Uhash' => $Uhash);
+     
+       return $a;
+    }
+
+
+    protected function HashSHA512($string)
+    {
+        $rounds = 5000;
+        $count = 0;
+        while ($count < $rounds) {
+            $string =  hash('sha512', $string);
+            $count++;
+        }
+        return $string;
+    }
+
+    protected function HashHMAC($string)
+    {
+        $seguro = 'haval256,5';
+        return hash_hmac($seguro, $string, '42');
+    }
+
+    protected function HashMd5($string)
+    {
+        $rounds = 5000;
+        $count = 0;
+        while ($count < $rounds) {
+            $string =  hash('md5', $string);
+            $count++;
+        }
+        return $string;
+    }
+
 }

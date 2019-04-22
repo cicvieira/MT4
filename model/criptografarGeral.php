@@ -65,4 +65,17 @@ if(isset($_POST['decryptMcrypt'])){
 	echo json_encode($decriptografa);
 }
 
+if(isset($_POST['compareHashes'])){
+	$txt_hash = $_POST['txt_hash'];
+	$comp_txt_hash = $_POST['comp_txt_hash'];
+
+	$hashes = $class->compareHashes($txt_hash, $comp_txt_hash);
+
+	header('Content-Type: application/json; charset=utf-8');
+	echo json_encode($hashes);
+}
+
+
+
+
 ?>
